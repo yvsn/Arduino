@@ -1,5 +1,5 @@
-int redLedPin = 9;
-int greenLedPin = 10;
+int redLedPin = 10;
+int greenLedPin = 9;
 int sensorValue = 0; // variable for sensor value
 int sensorPin = A0; // variable for sensor pin
 void setup() {
@@ -11,8 +11,7 @@ void setup() {
 void loop() {
  sensorValue = analogRead(sensorPin); // read the value/voltage on the sensor pin and
  // store that value in the variable sensorValue
- sensorValue = constrain(sensorValue, 482, 856);
-sensorValue = map(sensorValue, 482, 856, 255, 0);
+sensorValue = map(sensorValue, 0, 1023, 0, 255);
  analogWrite(redLedPin, sensorValue);
  analogWrite(greenLedPin, sensorValue);
  Serial.println(sensorValue); // print out sensorValue to the Serial Monitor

@@ -22,17 +22,16 @@
   https://www.arduino.cc/en/Tutorial/BuiltInExamples/Blink
 */
 
-int redLedPin = 10;
-int greenLedPin = 9;
-
+// the setup function runs once when you press reset or power the board
 void setup() {
- pinMode(redLedPin, OUTPUT);
- pinMode(greenLedPin, OUTPUT);
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
 }
+
+// the loop function runs over and over again forever
 void loop() {
- for (int brightness=0; brightness <256; brightness++){
- analogWrite(redLedPin, brightness);
- analogWrite (greenLedPin, - brightness);
- delay(10);
- }
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(2000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(2000);                       // wait for a second
 }
